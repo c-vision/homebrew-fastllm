@@ -16,7 +16,7 @@ class Fastllm < Formula
     pkgshare.install "share/fastllm/ds4", "share/fastllm/REQUIRES"
     doc.install Dir["share/doc/fastllm/*"]
     # the binary looks for the engine in ../lib/llmenv relative to itself
-    (lib/"llmenv").make_symlink Formula["llmenv"].opt_lib/"llmenv"
+    lib.install_symlink Formula["llmenv"].opt_lib/"llmenv"
   end
 
   test do
